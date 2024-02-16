@@ -1,0 +1,16 @@
+query getReadingChapter($slug: String, $quality: PageType) {
+    manga(slug: $slug) {
+        volumes {
+            number
+            chapters {
+                pages {
+                    isDoublePage
+                    number
+                    image(type: $quality) {
+                        url
+                    }
+                }
+            }
+        }
+    }
+}
