@@ -1,6 +1,4 @@
-# Mangue 🥭
-
-Mangas.io downloader
+<img src="https://github.com/Egsagon/mangue/blob/cf8c6233cc0e096749bb813edb3d91ba8e092493/mangue.png" width="600px">
 
 > [!WARNING]
 > This is probably against mangas.io terms or service.
