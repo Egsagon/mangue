@@ -1,0 +1,13 @@
+query getChapter($slug: String, $chapterNb: Float) {
+    manga(slug: $slug) {
+        chapter(number: $chapterNb) {
+            number
+            pages {
+                isDoublePage
+                image {
+                    url
+                }
+            }
+        }
+    }
+}

@@ -5,9 +5,10 @@ _awaiter_chars = '/-\\|'
 
 class awaiter:
     
-    def __init__(self) -> None:
+    def __init__(self, desc: str = '') -> None:
         self.index = 0
         self.speed = .3
+        self.desc = desc
         self.running = False
     
     def run(self) -> None:
@@ -18,7 +19,7 @@ class awaiter:
     
     def _thread(self) -> None:
         while self.running:
-            print('\r[' + _awaiter_chars[self.index % len(_awaiter_chars)] + '] ', end = '')
+            print('\r[' + _awaiter_chars[self.index % len(_awaiter_chars)] + f'] {self.desc}', end = '')
             self.index += 1
             time.sleep(self.speed)
         

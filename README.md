@@ -2,6 +2,9 @@
 
 Mangas.io downloader
 
+> !IMPORTANT
+> Broken as of now, don't use
+
 ## Installation
 ```sh
 git clone https://github.com/Egsagon/mangue

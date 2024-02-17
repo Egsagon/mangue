@@ -1,0 +1,11 @@
+query getVolumes($slug: String) {
+    manga(slug: $slug) {
+        volumes {
+            _id
+            number
+            chapters {
+                _id
+            }
+        }   
+    }
+}
