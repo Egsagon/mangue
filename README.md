@@ -1,4 +1,4 @@
-# Mangue
+# Mangue 🥭
 
 Mangas.io downloader
 
