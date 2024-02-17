@@ -9,18 +9,23 @@ Mangas.io downloader
 > I don't know if they will ban accounts for this, so avoid mass downloading. You may want to fine-tune the delays in the configuration according to your download needs.
 
 ## Installation
+
+Dependencies:
+    - requests
+    - tqdm
+    - pwinput
+
 ```sh
 git clone https://github.com/Egsagon/mangue
 cd mangue
 pip install -r requirements.txt
-py main.py
 ```
 
 ## Usage
 
 1. Get a manga slug (found in mangas URL)
     - For exemple: https://www.mangas.io/lire/undead-unluck
-    - The manga slug will be undead-unluck
+    - The manga slug will be `undead-unluck`
 
 2. Start script
     - `py main.py`
