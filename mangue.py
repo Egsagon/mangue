@@ -4,6 +4,13 @@
     License: GPLv3
 '''
 
+print('''\033[38;5;208m
+    ┌───────────────────────────────┐
+    │ MANGUE - Mangas.io downloader │
+    │ github.com/Egsagon/mangue     │
+    └───────────────────────────────┘
+\033[0m''')
+
 import os
 import time
 import tqdm
@@ -165,7 +172,7 @@ def main() -> None:
     with zipfile.ZipFile(archive_name, 'w') as archive:
 
         for chapter in tqdm.tqdm(range(start, end),
-                                desc = 'Progress',
+                                desc = '[ # ] Progress',
                                 colour = 'magenta',
                                 bar_format = BAR_FORMAT,
                                 ascii = ' ─'):
@@ -174,7 +181,7 @@ def main() -> None:
             chapter_data = res['manga']['chapter']
         
             for page in tqdm.tqdm(chapter_data['pages'],
-                                desc = f'CH-{str(chapter).zfill(5)}',
+                                desc = f'[ # ] CH-{str(chapter).zfill(5)}',
                                 leave = False,
                                 bar_format = BAR_FORMAT,
                                 ascii = ' ─'):
