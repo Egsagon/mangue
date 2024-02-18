@@ -6,43 +6,28 @@
 > [!CAUTION]
 > I don't know if they will ban accounts for this, so avoid mass downloading. You may want to fine-tune the delays in the configuration according to your download needs.
 
-## Installation
+## Installation & usage
 
-Dependencies:
-    - requests
-    - tqdm
-    - pwinput
+- Stable: See [latest build](https://github.com/Egsagon/mangue/releases/latest).
 
-```sh
+- Dev:
+```
 git clone https://github.com/Egsagon/mangue
 cd mangue
 pip install -r requirements.txt
+py main.py
 ```
 
-## Usage
+## Configuration
 
-1. Get a manga slug (found in mangas URL)
-    - For exemple: https://www.mangas.io/lire/undead-unluck
-    - The manga slug will be `undead-unluck`
-
-2. Start script
-    - `py main.py`
-
-```
-[ + ] Email > my@mail.com
-[ + ] Password > *************
-[ > ] Sucess! Logged in as `my@mail.com`
-[ + ] Manga slug > undead-unluck
-[ > ] Manga found! Has 134 chapters available.
-[ + ] Select chapter start (default=1) >
-[ + ] Select chapter end  (default=-1) > 2
-[ > ] Downloading 1 chapters. Press enter to confirm >
-...
-[ > ] Success! CBZ archive has been saved as `undead-unluck-ch1.cbz`.
-```
-
-> [!NOTE]
-> You can create a `creds.json` file in cwd to automatically login. Set `email` and `password` keys.
+You can create/modify the `config.json` file to you needs.
+key                         | description                                                            | default
+----------------------------+------------------------------------------------------------------------+--------
+`credentials`               | Email and password or your mangas.io account if you want to auto login | None
+`proxies`                   | Dictionnary maping schemes to proxy addresses you want to use          | None
+`max_download_attempts`     | Maximum download attempts before giving up (in seconds)                | 3
+`download_attempts_delay`   | Delay between each failed request before retrying (in seconds)         | 3
+`chapter_download_interval` | Delay between each chapter download (in seconds)                       | 5
 
 # License
 
