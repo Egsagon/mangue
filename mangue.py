@@ -23,10 +23,28 @@ import requests
 
 # ============== Configuration ============== #
 
-config = {}
-if os.path.exists('./config.json'):
-    with open('./config.json') as file:
-        config = json.load(file)
+try:
+    config = {}
+    if os.path.exists('./config.json'):
+        with open('./config.json') as file:
+            config = json.load(file)
+
+except Exception as err:
+    print(f'\033[91mError while parsing config: `{err}`\033[0m\n')
+    print('Make sure your config file has the following format:')
+    print('''
+{
+    "credentials": {
+        "email": null,
+        "password": null
+    },
+    
+    "proxies": null,
+    "max_download_attempts": 3,
+    "download_attempts_delay": 3,
+    "chapter_download_interval": 5
+}''')
+    input('\n\nPress <Enter> to close window.')
 
 PROXIES                = config.get('proxies')
 MAX_ATTEMPTS           = config.get('max_download_attempts',     3)
@@ -222,7 +240,7 @@ if __name__ == '__main__':
         
         print(f'\033[91mUnexpected {err.__class__.__name__} error:')
         traceback.print_tb(err.__traceback__)
-        print('\033[0m', end = '')
+        print(f'{err}\033[0m', end = '')
     
     input('\n\nScript terminated. Press <Enter> to close window.')
 
