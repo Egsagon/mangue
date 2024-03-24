@@ -1,0 +1,10 @@
+{
+    "credentials": {
+        "email": null,
+        "password": null
+    },
+    "proxies": null,
+    "max_download_attempts": 3,
+    "download_attempts_delay": 3,
+    "chapter_download_interval": 5
+}
