@@ -15,19 +15,19 @@
 git clone https://github.com/Egsagon/mangue
 cd mangue
 pip install -r requirements.txt
-py main.py
+py mangue.py
 ```
 
 ## Configuration
 
-You can create/modify the `config.json` file to you needs.
-key                         | description                                                            | default
-----------------------------+------------------------------------------------------------------------+--------
-`credentials`               | Email and password or your mangas.io account if you want to auto login | None
-`proxies`                   | Dictionnary maping schemes to proxy addresses you want to use          | None
-`max_download_attempts`     | Maximum download attempts before giving up (in seconds)                | 3
-`download_attempts_delay`   | Delay between each failed request before retrying (in seconds)         | 3
-`chapter_download_interval` | Delay between each chapter download (in seconds)                       | 5
+| You can create/modify the `config.json` file to you needs.
+| **key**                     | **description**                                                        | **default**|
+|:----------------------------|:-----------------------------------------------------------------------|:-----------|
+| `credentials`               | Email and password or your mangas.io account if you want to auto login | None       |
+| `proxies`                   | Dictionnary maping schemes to proxy addresses you want to use          | None       |
+| `max_download_attempts`     | Maximum download attempts before giving up (in seconds)                | 3          |
+| `download_attempts_delay`   | Delay between each failed request before retrying (in seconds)         | 3          |
+| `chapter_download_interval` | Delay between each chapter download (in seconds)                       | 5          |
 
 # License
 
