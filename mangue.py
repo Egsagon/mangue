@@ -41,8 +41,11 @@ if __name__ == '__main__':
         start = float(input(f'[ + ] Select chapter start (default={manga.first_chapter().number}) > ') or manga.first_chapter().number)
         end = float(input(f'[ + ] Select chapter end  (default={manga.last_chapter().number}) > ') or manga.last_chapter().number)
 
-        if not m_io.check_range(start, end):
-            raise "Please give correct start and end chapters"
+        while not m_io.check_range(start, end):
+            print('[ - ] \033[91mError: Please give correct start and end chapters.\033[0m')
+
+            start = float(input(f'[ + ] Select chapter start (default={manga.first_chapter().number}) > ') or manga.first_chapter().number)
+            end = float(input(f'[ + ] Select chapter end  (default={manga.last_chapter().number}) > ') or manga.last_chapter().number)
 
         print(f'[ > ] Has to download from chapter {start} until {end} ?')  # human readability
         input('[ + ] Press enter to confirm > ')
