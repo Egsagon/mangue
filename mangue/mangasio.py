@@ -1,5 +1,6 @@
 import json
 import os
+import pdb
 import zipfile
 import time
 
@@ -184,11 +185,17 @@ class Mangasio:
 
         return True
 
-    def download_range(self, start: float, end: float):
+    def check_range(self, start: float, end: float) -> bool:
         chap_numbers = [c.number for c in self.manga.chapters]
 
         if chap_numbers.count(start) == 0 or chap_numbers.count(end) == 0:
-            raise "Please give correct start and end chapters"
+            return False
+
+        return True
+
+    def download_range(self, start: float, end: float):
+        if not self.check_range(start, end):
+            return
 
         if start > end:
             temp = start
