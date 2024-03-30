@@ -4,18 +4,17 @@
     License: GPLv3
 '''
 
+import traceback
 from mangue import Mangasio
 
-print('''\033[38;5;208m
-    ┌──────────────────────────────────┐
-    │ MANGUE - Mangas.io downloader    │
-    │ base: github.com/Egsagon/mangue  │
-    └──────────────────────────────────┘
-\033[0m''')
-
-import traceback
-
 if __name__ == '__main__':
+
+    print('''\033[38;5;208m
+        ┌──────────────────────────────────┐
+        │ MANGUE - Mangas.io downloader    │
+        │ base: github.com/Egsagon/mangue  │
+        └──────────────────────────────────┘
+    \033[0m''')
 
     try:
         m_io = Mangasio()
